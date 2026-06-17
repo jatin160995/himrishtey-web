@@ -221,6 +221,10 @@ ul[role="list"] {
   justify-content: space-between;
   gap: var(--space-6);
 }
+.navbar-logo
+{
+    height: 50px;
+}
 
 .brand-logo {
   display: inline-flex;
