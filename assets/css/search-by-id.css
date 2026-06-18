@@ -1,0 +1,689 @@
+/* ================================================================
+   SEARCH BY PROFILE ID — search-by-id.css
+   Extends style.css. Uses all CSS variables from style.css.
+   ================================================================ */
+
+/* ---- Layout ---- */
+.sbid-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* ---- Page Header ---- */
+.sbid-page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.sbid-page-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light, rgba(217,39,104,0.1));
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sbid-page-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 2px;
+  line-height: 1.2;
+}
+
+.sbid-page-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---- Search Card ---- */
+.sbid-search-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-6);
+  overflow: hidden;
+}
+
+.sbid-search-card-body {
+  padding: var(--space-5) var(--space-6);
+}
+
+.sbid-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.sbid-label svg { color: var(--color-primary); }
+
+/* Input Row */
+.sbid-input-row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: stretch;
+}
+
+.sbid-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.sbid-input-icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-faint);
+  pointer-events: none;
+}
+
+.sbid-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 var(--space-10) 0 calc(var(--space-4) + 26px);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.03em;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.sbid-input::placeholder {
+  color: var(--color-text-faint);
+  font-weight: 400;
+}
+
+.sbid-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(217, 39, 104, 0.1);
+}
+
+.sbid-input.sbid-input-error {
+  border-color: var(--color-error, #a12c7b);
+  box-shadow: 0 0 0 3px rgba(161, 44, 123, 0.1);
+}
+
+/* shake animation */
+@keyframes sbid-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.sbid-input.shake {
+  animation: sbid-shake 0.35s ease;
+}
+
+.sbid-input-clear {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-surface-offset, #ece8e2);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.sbid-input-clear:hover {
+  background: var(--color-primary-light, rgba(217,39,104,0.12));
+  color: var(--color-primary);
+}
+
+/* Search Button */
+.sbid-search-btn {
+  height: 52px;
+  padding: 0 var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #b81d56 100%);
+  color: white;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(217, 39, 104, 0.3);
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  flex-shrink: 0;
+}
+
+.sbid-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 39, 104, 0.4);
+}
+
+.sbid-search-btn:active { transform: translateY(0); }
+
+.sbid-search-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes sbid-rotate {
+  to { transform: rotate(360deg); }
+}
+.sbid-spin {
+  animation: sbid-rotate 0.8s linear infinite;
+}
+
+/* Hint text */
+.sbid-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-top: var(--space-3);
+  line-height: 1.5;
+}
+
+.sbid-hint svg { flex-shrink: 0; margin-top: 1px; }
+.sbid-hint strong { color: var(--color-text-muted); }
+
+/* ================================================================
+   STATES
+================================================================ */
+.sbid-state {
+  margin-top: var(--space-4);
+}
+
+/* ---- Idle ---- */
+.sbid-state-idle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+}
+
+.sbid-idle-illustration {
+  margin-bottom: var(--space-5);
+  opacity: 0.75;
+}
+
+.sbid-idle-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---- Loading Skeleton ---- */
+.sbid-state-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.sbid-skeleton-card {
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+@keyframes sbid-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.sbid-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-offset, #ece8e2) 25%,
+    var(--color-surface-dynamic, #e0dbd5) 50%,
+    var(--color-surface-offset, #ece8e2) 75%
+  );
+  background-size: 200% 100%;
+  animation: sbid-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+.sbid-skeleton-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-offset, #ece8e2) 25%,
+    var(--color-surface-dynamic, #e0dbd5) 50%,
+    var(--color-surface-offset, #ece8e2) 75%
+  );
+  background-size: 200% 100%;
+  animation: sbid-shimmer 1.5s ease-in-out infinite;
+}
+
+.sbid-skeleton-lines { flex: 1; display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-2); }
+.sbid-skeleton-name  { height: 20px; width: 55%; }
+.sbid-skeleton-sub   { height: 14px; width: 75%; }
+.sbid-skeleton-sub2  { height: 14px; width: 40%; }
+
+.sbid-loading-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---- Not Found ---- */
+.sbid-state-notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-10) var(--space-4);
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.sbid-notfound-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-error-highlight, #e0ced7);
+  color: var(--color-error, #a12c7b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.sbid-notfound-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2);
+}
+
+.sbid-notfound-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 38ch;
+  margin: 0 0 var(--space-5);
+}
+
+.sbid-try-again-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: none;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.sbid-try-again-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light, rgba(217,39,104,0.06));
+}
+
+/* ================================================================
+   RESULT PROFILE CARD
+================================================================ */
+.sbid-result-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.sbid-result-label strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.sbid-profile-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.sbid-profile-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Cover image area */
+.sbid-profile-cover {
+  position: relative;
+  height: 140px;
+  background: linear-gradient(135deg, var(--color-primary-light, rgba(217,39,104,0.15)), rgba(240,80,144,0.1));
+  overflow: hidden;
+}
+
+.sbid-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sbid-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Profile Body */
+.sbid-profile-body {
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+.sbid-profile-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: -40px;
+  margin-bottom: var(--space-4);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.sbid-profile-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sbid-profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-surface);
+  object-fit: cover;
+  display: block;
+  background: var(--color-surface-offset);
+  box-shadow: var(--shadow-md);
+}
+
+.sbid-online-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid var(--color-surface);
+}
+
+/* Action Buttons */
+.sbid-profile-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: var(--space-1);
+}
+
+.sbid-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 180ms ease;
+  white-space: nowrap;
+}
+
+.sbid-btn-interest {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(217, 39, 104, 0.3);
+}
+
+.sbid-btn-interest:hover {
+  background: var(--color-primary-hover, #b81d56);
+  border-color: var(--color-primary-hover, #b81d56);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 39, 104, 0.4);
+}
+
+.sbid-btn-interest.active svg { fill: white; }
+
+.sbid-btn-shortlist {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.sbid-btn-shortlist:hover,
+.sbid-btn-shortlist.active {
+  background: var(--color-gold-highlight, #e9e0c6);
+  border-color: var(--color-gold, #d19900);
+  color: var(--color-gold, #d19900);
+}
+
+.sbid-btn-message {
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.sbid-btn-message:hover {
+  background: var(--color-primary-light, rgba(217,39,104,0.08));
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Profile Name Row */
+.sbid-profile-info { margin-bottom: var(--space-4); }
+
+.sbid-profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.sbid-profile-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sbid-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light, rgba(217,39,104,0.1));
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(217,39,104,0.2);
+}
+
+.sbid-profile-id-tag {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-3);
+}
+
+/* Quick Stats Row */
+.sbid-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sbid-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface-offset, #ece8e2);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.sbid-stat-pill svg { color: var(--color-primary); flex-shrink: 0; }
+
+/* Details Grid */
+.sbid-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--color-divider);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+}
+
+.sbid-detail-item {
+  background: var(--color-bg);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sbid-detail-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sbid-detail-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sbid-detail-value.empty { color: var(--color-text-faint); font-style: italic; font-weight: 400; }
+
+/* View Full Profile CTA */
+.sbid-view-full-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #b81d56 100%);
+  color: white;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(217, 39, 104, 0.3);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.sbid-view-full-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 39, 104, 0.42);
+  text-decoration: none;
+}
+
+/* ---- Entry animation ---- */
+@keyframes sbid-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sbid-state-result.visible .sbid-profile-card {
+  animation: sbid-slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 540px) {
+  .sbid-search-card-body { padding: var(--space-4); }
+
+  .sbid-input-row { flex-direction: column; }
+
+  .sbid-input { height: 48px; }
+
+  .sbid-search-btn {
+    width: 100%;
+    height: 48px;
+    justify-content: center;
+  }
+
+  .sbid-profile-actions { gap: var(--space-1); }
+  .sbid-action-btn span { display: none; }
+  .sbid-action-btn { padding: var(--space-2) var(--space-3); }
+
+  .sbid-details-grid { grid-template-columns: 1fr; }
+
+  .sbid-profile-name { font-size: var(--text-lg); }
+}
+
+/* ---- Dark mode ---- */
+[data-theme="dark"] .sbid-profile-cover {
+  background: linear-gradient(135deg, rgba(217,39,104,0.1), rgba(240,80,144,0.06));
+}
+
+[data-theme="dark"] .sbid-detail-item {
+  background: var(--color-surface-2, #201f1d);
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Search — HimRishtey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Base + Page CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/quick-search.css" />
+</head>
+
+<body>
+  <a href="#qs-main" class="skip-link">Skip to content</a>
+
+  <!-- ===== HEADER (from Space instructions) ===== -->
+  <header class="top-navbar" role="banner">
+    <div class="navbar-inner container-fluid">
+      <div class="navbar-left">
+        <button class="hamburger-btn" id="sidebarToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+          <i data-lucide="menu" width="22" height="22"></i>
+        </button>
+        <div class="navbar-brand">
+          <img src="assets/images/logo.png" alt="HimRishtey Logo" class="navbar-logo">
+        </div>
+        <span class="navbar-greeting">Hi, <strong>Priya</strong> 👋</span>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-wallet">
+          <i data-lucide="wallet" width="18" height="18"></i>
+          <span class="wallet-balance">₹1,250</span>
+        </div>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+        <button class="profile-avatar-btn" id="profileQuickViewBtn" aria-label="Open profile quick view" aria-expanded="false" aria-controls="profileQuickView">
+          <img src="https://picsum.photos/seed/bride1/40/40" alt="Priya Sharma" width="40" height="40" class="navbar-avatar" loading="lazy" />
+          <span class="online-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== SIDEBAR OVERLAY ===== -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigation sidebar">
+    <div class="sidebar-header">
+      <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close menu">
+        <i data-lucide="x" width="16" height="16"></i>
+      </button>
+      <div class="sidebar-profile-card">
+        <div class="sidebar-avatar-wrap">
+          <img src="https://picsum.photos/seed/bride1/72/72" alt="Profile photo" class="sidebar-avatar" width="72" height="72" loading="lazy" />
+        </div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Priya Sharma</div>
+          <span class="sidebar-label">Profile ID</span>
+          <span class="sidebar-value">HR-20241</span>
+          <span class="sidebar-status active">Active</span>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav" aria-label="Sidebar navigation">
+      <span class="sidebar-nav-section-label">Main</span>
+      <ul role="list">
+        <li><a href="index.html" class="sidebar-nav-item"><i data-lucide="home" width="18" height="18"></i> Dashboard</a></li>
+        <li><a href="quick-search.html" class="sidebar-nav-item active" aria-current="page"><i data-lucide="search" width="18" height="18"></i> Quick Search</a></li>
+        <li><a href="advance-search.html" class="sidebar-nav-item"><i data-lucide="sliders-horizontal" width="18" height="18"></i> Advance Search</a></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="heart" width="18" height="18"></i> Matches</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="star" width="18" height="18"></i> Shortlisted</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="message-circle" width="18" height="18"></i> Messages</button></li>
+      </ul>
+      <span class="sidebar-nav-section-label" style="margin-top:var(--space-4);">Account</span>
+      <ul role="list">
+        <li><button class="sidebar-nav-item"><i data-lucide="user" width="18" height="18"></i> My Profile</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="settings" width="18" height="18"></i> Settings</button></li>
+        <li><button class="sidebar-nav-item sidebar-logout-btn"><i data-lucide="log-out" width="18" height="18"></i> Logout</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main-content qs-main" id="qs-main">
+    <div class="qs-container">
+
+      <!-- Page Header -->
+      <div class="qs-page-header">
+        <div class="qs-page-header-icon">
+          <i data-lucide="search" width="22" height="22"></i>
+        </div>
+        <div>
+          <h1 class="qs-page-title">Quick Search</h1>
+          <p class="qs-page-subtitle">Find your match in just a few clicks</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="qs-form" id="qsForm" novalidate>
+
+        <!-- Age Range Card -->
+        <div class="qs-card">
+          <div class="qs-card-head">
+            <span class="qs-card-icon"><i data-lucide="calendar" width="18" height="18"></i></span>
+            <div>
+              <h2 class="qs-card-title">Age Range</h2>
+              <p class="qs-card-desc">Preferred age of partner</p>
+            </div>
+            <div class="qs-age-badge" id="ageBadge">18 – 70 yrs</div>
+          </div>
+          <div class="qs-card-body">
+            <div class="qs-range-wrap">
+              <div class="qs-range-track-container">
+                <div class="qs-range-track"></div>
+                <div class="qs-range-fill" id="ageFill"></div>
+                <input type="range" class="qs-range" id="ageMin" min="18" max="70" value="18" step="1" aria-label="Minimum age" />
+                <input type="range" class="qs-range" id="ageMax" min="18" max="70" value="70" step="1" aria-label="Maximum age" />
+              </div>
+              <div class="qs-range-endpoints">
+                <span>18</span><span>70</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Religion Card -->
+        <div class="qs-card">
+          <div class="qs-card-head">
+            <span class="qs-card-icon"><i data-lucide="sun" width="18" height="18"></i></span>
+            <div>
+              <h2 class="qs-card-title">Religion</h2>
+              <p class="qs-card-desc">Select preferred religion</p>
+            </div>
+          </div>
+          <div class="qs-card-body">
+            <div class="qs-pills-grid" id="religionPills" role="group" aria-label="Religion options">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Card -->
+        <div class="qs-card">
+          <div class="qs-card-head">
+            <span class="qs-card-icon"><i data-lucide="layers" width="18" height="18"></i></span>
+            <div>
+              <h2 class="qs-card-title">Community / Caste</h2>
+              <p class="qs-card-desc">Select one or more communities</p>
+            </div>
+          </div>
+          <div class="qs-card-body">
+            <!-- Search Input -->
+            <div class="qs-search-box">
+              <i data-lucide="search" width="16" height="16" class="qs-search-icon"></i>
+              <input type="text" id="communitySearch" class="qs-search-input" placeholder="Search community..." autocomplete="off" aria-label="Search communities" />
+              <button type="button" class="qs-search-clear" id="commSearchClear" aria-label="Clear search" style="display:none;">
+                <i data-lucide="x" width="14" height="14"></i>
+              </button>
+            </div>
+            <!-- Pills grid with scroll -->
+            <div class="qs-pills-scroll" id="communityPills" role="group" aria-label="Community options">
+              <!-- Rendered by JS -->
+            </div>
+            <div class="qs-selected-bar" id="commSelectedBar" style="display:none;">
+              <span class="qs-selected-label">Selected:</span>
+              <div class="qs-selected-chips" id="commSelectedChips"></div>
+              <button type="button" class="qs-clear-link" id="commClearAll">Clear all</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marital Status Card -->
+        <div class="qs-card">
+          <div class="qs-card-head">
+            <span class="qs-card-icon"><i data-lucide="heart" width="18" height="18"></i></span>
+            <div>
+              <h2 class="qs-card-title">Marital Status</h2>
+              <p class="qs-card-desc">Previous relationship status</p>
+            </div>
+          </div>
+          <div class="qs-card-body">
+            <div class="qs-pills-grid" id="maritalPills" role="group" aria-label="Marital status options">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- ===== STICKY BOTTOM BAR ===== -->
+    <div class="qs-bottom-bar">
+      <div class="qs-bottom-inner">
+        <div class="qs-bottom-summary" id="qsSummary">
+          <i data-lucide="filter" width="16" height="16"></i>
+          <span id="qsSummaryText">No filters applied</span>
+        </div>
+        <button type="button" class="qs-reset-btn" id="qsResetBtn" aria-label="Reset all filters">
+          <i data-lucide="rotate-ccw" width="15" height="15"></i>
+          Reset
+        </button>
+        <button type="button" class="qs-search-btn" id="qsSearchBtn">
+          <i data-lucide="search" width="18" height="18"></i>
+          Search Profiles
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Base JS -->
+  <script src="assets/js/script.js"></script>
+  <!-- Page JS -->
+  <script src="assets/js/quick-search.js"></script>
+</body>
+</html>

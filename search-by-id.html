@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search by Profile ID — HimRishtey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Base + Page CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/search-by-id.css" />
+</head>
+
+<body>
+  <a href="#sbid-main" class="skip-link">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="top-navbar" role="banner">
+    <div class="navbar-inner container-fluid">
+      <div class="navbar-left">
+        <button class="hamburger-btn" id="sidebarToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+          <i data-lucide="menu" width="22" height="22"></i>
+        </button>
+        <div class="navbar-brand">
+          <img src="assets/images/logo.png" alt="HimRishtey Logo" class="navbar-logo">
+        </div>
+        <span class="navbar-greeting">Hi, <strong>Priya</strong> 👋</span>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-wallet">
+          <i data-lucide="wallet" width="18" height="18"></i>
+          <span class="wallet-balance">₹1,250</span>
+        </div>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+        <button class="profile-avatar-btn" id="profileQuickViewBtn" aria-label="Open profile quick view" aria-expanded="false" aria-controls="profileQuickView">
+          <img src="https://picsum.photos/seed/bride1/40/40" alt="Priya Sharma" width="40" height="40" class="navbar-avatar" loading="lazy" />
+          <span class="online-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== SIDEBAR OVERLAY ===== -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigation sidebar">
+    <div class="sidebar-header">
+      <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close menu">
+        <i data-lucide="x" width="16" height="16"></i>
+      </button>
+      <div class="sidebar-profile-card">
+        <div class="sidebar-avatar-wrap">
+          <img src="https://picsum.photos/seed/bride1/72/72" alt="Profile photo" class="sidebar-avatar" width="72" height="72" loading="lazy" />
+        </div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Priya Sharma</div>
+          <span class="sidebar-label">Profile ID</span>
+          <span class="sidebar-value">HR-20241</span>
+          <span class="sidebar-status active">Active</span>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav" aria-label="Sidebar navigation">
+      <span class="sidebar-nav-section-label">Main</span>
+      <ul role="list">
+        <li><a href="index.html" class="sidebar-nav-item"><i data-lucide="home" width="18" height="18"></i> Dashboard</a></li>
+        <li><a href="quick-search.html" class="sidebar-nav-item"><i data-lucide="search" width="18" height="18"></i> Quick Search</a></li>
+        <li><a href="advance-search.html" class="sidebar-nav-item"><i data-lucide="sliders-horizontal" width="18" height="18"></i> Advance Search</a></li>
+        <li><a href="search-by-id.html" class="sidebar-nav-item active" aria-current="page"><i data-lucide="id-card" width="18" height="18"></i> Search by ID</a></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="heart" width="18" height="18"></i> Matches</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="star" width="18" height="18"></i> Shortlisted</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="message-circle" width="18" height="18"></i> Messages</button></li>
+      </ul>
+      <span class="sidebar-nav-section-label" style="margin-top:var(--space-4);">Account</span>
+      <ul role="list">
+        <li><button class="sidebar-nav-item"><i data-lucide="user" width="18" height="18"></i> My Profile</button></li>
+        <li><button class="sidebar-nav-item"><i data-lucide="settings" width="18" height="18"></i> Settings</button></li>
+        <li><button class="sidebar-nav-item sidebar-logout-btn"><i data-lucide="log-out" width="18" height="18"></i> Logout</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main-content" id="sbid-main">
+    <div class="sbid-container">
+
+      <!-- Page Header -->
+      <div class="sbid-page-header">
+        <div class="sbid-page-header-icon" aria-hidden="true">
+          <i data-lucide="id-card" width="22" height="22"></i>
+        </div>
+        <div>
+          <h1 class="sbid-page-title">Search by Profile ID</h1>
+          <p class="sbid-page-subtitle">Enter a HimRishtey profile ID to find a specific member</p>
+        </div>
+      </div>
+
+      <!-- Search Card -->
+      <div class="sbid-search-card">
+        <div class="sbid-search-card-body">
+          <label class="sbid-label" for="profileIdInput">
+            <i data-lucide="hash" width="14" height="14"></i>
+            Profile ID
+          </label>
+          <div class="sbid-input-row">
+            <div class="sbid-input-wrap">
+              <i data-lucide="search" width="18" height="18" class="sbid-input-icon"></i>
+              <input
+                type="text"
+                id="profileIdInput"
+                class="sbid-input"
+                placeholder="e.g. HR-10234"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                maxlength="20"
+                aria-label="Enter profile ID"
+              />
+              <button type="button" class="sbid-input-clear" id="sbidClearInput" aria-label="Clear input" style="display:none;">
+                <i data-lucide="x" width="14" height="14"></i>
+              </button>
+            </div>
+            <button type="button" class="sbid-search-btn" id="sbidSearchBtn" aria-label="Search profile">
+              <span class="sbid-btn-text">Search</span>
+              <span class="sbid-btn-icon"><i data-lucide="arrow-right" width="16" height="16"></i></span>
+              <!-- Loading spinner (hidden by default) -->
+              <span class="sbid-btn-spinner" aria-hidden="true" style="display:none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="sbid-spin">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <p class="sbid-hint">
+            <i data-lucide="info" width="12" height="12"></i>
+            Profile IDs are in the format <strong>HR-XXXXX</strong>. You can find it on any member's profile card.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== STATES AREA ===== -->
+
+      <!-- IDLE STATE (default) -->
+      <div class="sbid-state sbid-state-idle" id="stateIdle">
+        <div class="sbid-idle-illustration" aria-hidden="true">
+          <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="120">
+            <ellipse cx="80" cy="110" rx="60" ry="8" fill="var(--color-surface-offset)" />
+            <rect x="30" y="20" width="100" height="76" rx="12" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+            <circle cx="80" cy="50" r="18" fill="var(--color-primary-light,rgba(217,39,104,0.12))"/>
+            <circle cx="80" cy="47" r="10" fill="var(--color-primary-light,rgba(217,39,104,0.2))"/>
+            <ellipse cx="80" cy="63" rx="14" ry="6" fill="var(--color-primary-light,rgba(217,39,104,0.12))"/>
+            <rect x="50" y="72" width="60" height="5" rx="2.5" fill="var(--color-surface-offset)"/>
+            <rect x="60" y="81" width="40" height="4" rx="2" fill="var(--color-surface-offset)"/>
+            <!-- Search glass -->
+            <circle cx="118" cy="30" r="12" stroke="var(--color-primary)" stroke-width="2.5" fill="none"/>
+            <line x1="126" y1="38" x2="133" y2="45" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="sbid-idle-text">Enter a profile ID above to search for a member</p>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div class="sbid-state sbid-state-loading" id="stateLoading" style="display:none;" aria-live="polite" aria-label="Searching...">
+        <div class="sbid-skeleton-card">
+          <div class="sbid-skeleton-avatar"></div>
+          <div class="sbid-skeleton-lines">
+            <div class="sbid-skeleton sbid-skeleton-name"></div>
+            <div class="sbid-skeleton sbid-skeleton-sub"></div>
+            <div class="sbid-skeleton sbid-skeleton-sub2"></div>
+          </div>
+        </div>
+        <p class="sbid-loading-text">Searching for profile…</p>
+      </div>
+
+      <!-- NOT FOUND STATE -->
+      <div class="sbid-state sbid-state-notfound" id="stateNotFound" style="display:none;" aria-live="polite">
+        <div class="sbid-notfound-icon" aria-hidden="true">
+          <i data-lucide="user-x" width="32" height="32"></i>
+        </div>
+        <h2 class="sbid-notfound-title">Profile Not Found</h2>
+        <p class="sbid-notfound-desc">No member found with ID <strong id="notFoundId"></strong>. Please check and try again.</p>
+        <button type="button" class="sbid-try-again-btn" id="sbidTryAgain">
+          <i data-lucide="rotate-ccw" width="14" height="14"></i> Try Again
+        </button>
+      </div>
+
+      <!-- RESULT STATE -->
+      <div class="sbid-state sbid-state-result" id="stateResult" style="display:none;" aria-live="polite">
+        <p class="sbid-result-label">Search result for <strong id="resultIdLabel"></strong></p>
+
+        <!-- Profile Result Card -->
+        <div class="sbid-profile-card" id="sbidProfileCard" tabindex="0" role="article" aria-label="Search result profile">
+
+          <!-- Cover + Avatar -->
+          <div class="sbid-profile-cover">
+            <img src="" alt="" id="resultCoverImg" class="sbid-cover-img" width="680" height="160" loading="lazy" />
+            <div class="sbid-cover-overlay"></div>
+          </div>
+
+          <div class="sbid-profile-body">
+            <div class="sbid-profile-top">
+              <div class="sbid-profile-avatar-wrap">
+                <img src="" alt="" id="resultAvatar" class="sbid-profile-avatar" width="80" height="80" loading="lazy" />
+                <span class="sbid-online-badge" id="resultOnlineBadge" style="display:none;" aria-label="Online now"></span>
+              </div>
+              <div class="sbid-profile-actions">
+                <button type="button" class="sbid-action-btn sbid-btn-interest" id="sbidInterestBtn" aria-label="Send interest">
+                  <i data-lucide="heart" width="16" height="16"></i>
+                  <span>Interest</span>
+                </button>
+                <button type="button" class="sbid-action-btn sbid-btn-shortlist" id="sbidShortlistBtn" aria-label="Shortlist profile">
+                  <i data-lucide="bookmark" width="16" height="16"></i>
+                  <span>Shortlist</span>
+                </button>
+                <button type="button" class="sbid-action-btn sbid-btn-message" id="sbidMessageBtn" aria-label="Send message">
+                  <i data-lucide="message-circle" width="16" height="16"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Name / Basic Info -->
+            <div class="sbid-profile-info">
+              <div class="sbid-profile-name-row">
+                <h2 class="sbid-profile-name" id="resultName">—</h2>
+                <span class="sbid-verified-badge" id="resultVerifiedBadge" style="display:none;" aria-label="Verified profile">
+                  <i data-lucide="badge-check" width="14" height="14"></i> Verified
+                </span>
+              </div>
+              <p class="sbid-profile-id-tag" id="resultIdTag">—</p>
+
+              <!-- Quick Stats Row -->
+              <div class="sbid-stats-row" id="resultStatsRow">
+                <!-- populated by JS -->
+              </div>
+            </div>
+
+            <!-- Details Grid -->
+            <div class="sbid-details-grid" id="resultDetailsGrid">
+              <!-- populated by JS -->
+            </div>
+
+            <!-- View Full Profile CTA -->
+            <a href="#" class="sbid-view-full-btn" id="sbidViewFullBtn" aria-label="View full profile">
+              View Full Profile
+              <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Base JS -->
+  <script src="assets/js/script.js"></script>
+  <!-- Page JS -->
+  <script src="assets/js/search-by-id.js"></script>
+</body>
+</html>

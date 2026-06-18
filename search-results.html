@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results — HimRishtey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/search-results.css" />
+</head>
+<body>
+
+  <a href="#sr-main" class="skip-link">Skip to main content</a>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="Navigation menu">
+    <div class="sidebar-header">
+      <div class="sidebar-profile-card">
+        <div class="sidebar-avatar-wrap">
+          <img src="https://picsum.photos/seed/bride1/80/80" alt="Priya Sharma" width="80" height="80" loading="lazy" class="sidebar-avatar" />
+          <span class="sidebar-avatar-badge" aria-hidden="true">
+            <i data-lucide="camera" width="12" height="12"></i>
+          </span>
+        </div>
+        <div class="sidebar-user-info">
+          <h2 class="sidebar-user-name">Priya Sharma</h2>
+          <span class="sidebar-label">Profile ID</span>
+          <span class="sidebar-value">HR-10045</span>
+          <span class="sidebar-label">Membership</span>
+          <span class="sidebar-status active">Active</span>
+          <span class="sidebar-label">Plan</span>
+          <span class="sidebar-plan-name">Gold Member</span>
+        </div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close menu">
+        <i data-lucide="x" width="20" height="20"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <span class="sidebar-nav-section-label">Menu</span>
+      <ul role="list">
+        <li><a href="index.html" class="sidebar-nav-item"><i data-lucide="home" width="18" height="18"></i><span>Home</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="shield" width="18" height="18"></i><span>Membership</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="edit-3" width="18" height="18"></i><span>Edit Profile</span></a></li>
+        <li><a href="quick-search.html" class="sidebar-nav-item"><i data-lucide="search" width="18" height="18"></i><span>Quick Search</span></a></li>
+        <li><a href="advance-search.html" class="sidebar-nav-item"><i data-lucide="sliders" width="18" height="18"></i><span>Advanced Search</span></a></li>
+        <li><a href="search-by-id.html" class="sidebar-nav-item"><i data-lucide="user-search" width="18" height="18"></i><span>Search by Profile ID</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="inbox" width="18" height="18"></i><span>Interest Box</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="eye" width="18" height="18"></i><span>View My Profile</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="key-round" width="18" height="18"></i><span>Change Password</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="phone" width="18" height="18"></i><span>Viewed Contact</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="gift" width="18" height="18"></i><span>Refer &amp; Earn</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="trophy" width="18" height="18"></i><span>Success Stories</span></a></li>
+        <li>
+          <button class="sidebar-nav-item sidebar-logout-btn" id="logoutBtn">
+            <i data-lucide="log-out" width="18" height="18"></i><span>Logout</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="top-navbar" role="banner">
+    <div class="navbar-inner container-fluid">
+      <div class="navbar-left">
+        <button class="hamburger-btn" id="sidebarToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+          <i data-lucide="menu" width="22" height="22"></i>
+        </button>
+        <div class="navbar-brand">
+          <img src="assets/images/logo.png" alt="Himrishtey Logo" class="navbar-logo">
+        </div>
+        <span class="navbar-greeting">Hi, <strong>Priya</strong> 👋</span>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-wallet">
+          <i data-lucide="wallet" width="18" height="18"></i>
+          <span class="wallet-balance">₹1,250</span>
+        </div>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+        <button class="profile-avatar-btn" id="profileQuickViewBtn" aria-label="Open profile quick view" aria-expanded="false" aria-controls="profileQuickView">
+          <img src="https://picsum.photos/seed/bride1/40/40" alt="Priya Sharma" width="40" height="40" class="navbar-avatar" loading="lazy" />
+          <span class="online-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-content" id="sr-main">
+
+    <!-- ── STICKY TOP BAR: breadcrumb + active filters ── -->
+    <div class="sr-topbar container-xxl">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb-custom">
+          <li><a href="index.html"><i data-lucide="home" width="14" height="14"></i></a></li>
+          <li><a href="advance-search.html">Search</a></li>
+          <li aria-current="page">Results</li>
+        </ol>
+      </nav>
+
+      <!-- Active filter chips (horizontal scroll) -->
+      <div class="sr-filters-row" id="srFilterChips" role="list" aria-label="Active filters">
+        <!-- Populated by JS from URL params / mock data -->
+      </div>
+
+      <!-- Result count + sort -->
+      <div class="sr-meta-row">
+        <span class="sr-count" id="srCount">
+          <i data-lucide="users" width="14" height="14"></i>
+          <span id="srCountNum">—</span> profiles found
+        </span>
+        <div class="sr-sort-wrap">
+          <label for="srSort" class="sr-only">Sort by</label>
+          <select id="srSort" class="sr-sort-select" aria-label="Sort results">
+            <option value="relevance">Relevance</option>
+            <option value="newest">Newest First</option>
+            <option value="age_asc">Age: Low to High</option>
+            <option value="age_desc">Age: High to Low</option>
+          </select>
+          <i data-lucide="chevron-down" width="14" height="14" class="sr-sort-arrow"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GRID AREA ── -->
+    <div class="sr-grid-wrap container-xxl" id="srGridWrap">
+
+      <!-- SKELETON (shown on initial load) -->
+      <div class="sr-grid" id="srSkeletonGrid" aria-hidden="true">
+        <!-- 8 skeleton cards -->
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+        <div class="sr-skeleton-card"><div class="sr-skel-img"></div><div class="sr-skel-body"><div class="sr-skel-line w60"></div><div class="sr-skel-line w40"></div><div class="sr-skel-line w80"></div></div></div>
+      </div>
+
+      <!-- RESULTS GRID (populated by JS) -->
+      <div class="sr-grid" id="srResultGrid" style="display:none;" role="list" aria-label="Search results"></div>
+
+      <!-- EMPTY STATE -->
+      <div class="sr-empty" id="srEmpty" style="display:none;">
+        <div class="sr-empty-icon" aria-hidden="true">
+          <i data-lucide="search-x" width="36" height="36"></i>
+        </div>
+        <h2 class="sr-empty-title">No profiles found</h2>
+        <p class="sr-empty-desc">Try adjusting your search filters to find more matches.</p>
+        <a href="advance-search.html" class="sr-empty-btn">
+          <i data-lucide="sliders-horizontal" width="15" height="15"></i>
+          Modify Search
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ── INFINITE SCROLL LOADER ── -->
+    <div class="sr-load-more" id="srLoadMore" style="display:none;" aria-live="polite">
+      <div class="sr-loader-bar">
+        <span></span><span></span><span></span>
+      </div>
+      <p>Loading more profiles…</p>
+    </div>
+
+    <!-- ── END OF RESULTS ── -->
+    <p class="sr-end-msg" id="srEndMsg" style="display:none;">
+      <i data-lucide="check-circle" width="16" height="16"></i>
+      You've seen all results for this search.
+      <a href="advance-search.html">Refine your search</a>
+    </p>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container-xxl footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="HimRishtey Logo" class="footer-logo">
+        <p class="footer-tagline">Connecting hearts across Himachal Pradesh &amp; beyond.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <p class="footer-copy">© 2026 HimRishtey. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Base JS -->
+  <script src="assets/js/script.js"></script>
+  <!-- Page JS -->
+  <script src="assets/js/search-results.js"></script>
+
+</body>
+</html>
