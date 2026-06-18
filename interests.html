@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interests — HimRishtey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/interests.css" />
+</head>
+<body>
+
+  <a href="#int-main" class="skip-link">Skip to main content</a>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="Navigation menu">
+    <div class="sidebar-header">
+      <div class="sidebar-profile-card">
+        <div class="sidebar-avatar-wrap">
+          <img src="https://picsum.photos/seed/bride1/80/80" alt="Priya Sharma" width="80" height="80" loading="lazy" class="sidebar-avatar" />
+          <span class="sidebar-avatar-badge" aria-hidden="true">
+            <i data-lucide="camera" width="12" height="12"></i>
+          </span>
+        </div>
+        <div class="sidebar-user-info">
+          <h2 class="sidebar-user-name">Priya Sharma</h2>
+          <span class="sidebar-label">Profile ID</span>
+          <span class="sidebar-value">HR-10045</span>
+          <span class="sidebar-label">Membership</span>
+          <span class="sidebar-status active">Active</span>
+          <span class="sidebar-label">Plan</span>
+          <span class="sidebar-plan-name">Gold Member</span>
+        </div>
+      </div>
+      <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close menu">
+        <i data-lucide="x" width="20" height="20"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <span class="sidebar-nav-section-label">Menu</span>
+      <ul role="list">
+        <li><a href="index.html" class="sidebar-nav-item"><i data-lucide="home" width="18" height="18"></i><span>Home</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="shield" width="18" height="18"></i><span>Membership</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="edit-3" width="18" height="18"></i><span>Edit Profile</span></a></li>
+        <li><a href="quick-search.html" class="sidebar-nav-item"><i data-lucide="search" width="18" height="18"></i><span>Quick Search</span></a></li>
+        <li><a href="advance-search.html" class="sidebar-nav-item"><i data-lucide="sliders" width="18" height="18"></i><span>Advanced Search</span></a></li>
+        <li><a href="search-by-id.html" class="sidebar-nav-item"><i data-lucide="user-search" width="18" height="18"></i><span>Search by Profile ID</span></a></li>
+        <li><a href="interests.html" class="sidebar-nav-item active" aria-current="page"><i data-lucide="inbox" width="18" height="18"></i><span>Interest Box</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="eye" width="18" height="18"></i><span>View My Profile</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="key-round" width="18" height="18"></i><span>Change Password</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="phone" width="18" height="18"></i><span>Viewed Contact</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="gift" width="18" height="18"></i><span>Refer &amp; Earn</span></a></li>
+        <li><a href="#" class="sidebar-nav-item"><i data-lucide="trophy" width="18" height="18"></i><span>Success Stories</span></a></li>
+        <li>
+          <button class="sidebar-nav-item sidebar-logout-btn" id="logoutBtn">
+            <i data-lucide="log-out" width="18" height="18"></i><span>Logout</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ── HEADER ── -->
+  <header class="top-navbar" role="banner">
+    <div class="navbar-inner container-fluid">
+      <div class="navbar-left">
+        <button class="hamburger-btn" id="sidebarToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+          <i data-lucide="menu" width="22" height="22"></i>
+        </button>
+        <div class="navbar-brand">
+          <img src="assets/images/logo.png" alt="HimRishtey Logo" class="navbar-logo">
+        </div>
+        <span class="navbar-greeting">Hi, <strong>Priya</strong> 👋</span>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-wallet">
+          <i data-lucide="wallet" width="18" height="18"></i>
+          <span class="wallet-balance">₹1,250</span>
+        </div>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+        <button class="profile-avatar-btn" id="profileQuickViewBtn" aria-label="Open profile quick view" aria-expanded="false" aria-controls="profileQuickView">
+          <img src="https://picsum.photos/seed/bride1/40/40" alt="Priya Sharma" width="40" height="40" class="navbar-avatar" loading="lazy" />
+          <span class="online-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main class="main-content" id="int-main">
+
+    <!-- PAGE HEADER -->
+    <div class="int-page-header container-xxl">
+      <div class="int-page-title-row">
+        <div class="int-page-title-wrap">
+          <i data-lucide="inbox" width="22" height="22" class="int-title-icon" aria-hidden="true"></i>
+          <h1 class="int-page-title">Interest Box</h1>
+        </div>
+
+        <!-- Received / Sent Toggle -->
+        <div class="int-toggle-wrap" role="group" aria-label="View received or sent interests">
+          <button class="int-toggle-btn active" id="btnReceived" data-mode="received" aria-pressed="true">
+            <i data-lucide="download" width="14" height="14"></i>
+            Received
+          </button>
+          <button class="int-toggle-btn" id="btnSent" data-mode="sent" aria-pressed="false">
+            <i data-lucide="send" width="14" height="14"></i>
+            Sent
+          </button>
+        </div>
+      </div>
+
+      <!-- Summary counts -->
+      <div class="int-summary-row" id="intSummaryRow">
+        <div class="int-summary-chip pending"   id="summaryPending">
+          <i data-lucide="clock" width="13" height="13"></i>
+          <span class="sc-num" id="cntPending">0</span> Pending
+        </div>
+        <div class="int-summary-chip accepted"  id="summaryAccepted">
+          <i data-lucide="check-circle" width="13" height="13"></i>
+          <span class="sc-num" id="cntAccepted">0</span> Accepted
+        </div>
+        <div class="int-summary-chip rejected"  id="summaryRejected">
+          <i data-lucide="x-circle" width="13" height="13"></i>
+          <span class="sc-num" id="cntRejected">0</span> Rejected
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB BAR -->
+    <div class="int-tabbar-wrap" role="tablist" aria-label="Interest status tabs" id="intTabBar">
+      <button class="int-tab active" role="tab" id="tabPending"  aria-selected="true"  aria-controls="panelPending"  data-tab="pending">
+        <i data-lucide="clock"       width="15" height="15"></i>
+        <span>Pending</span>
+        <span class="int-tab-badge" id="badgePending">0</span>
+      </button>
+      <button class="int-tab"        role="tab" id="tabAccepted" aria-selected="false" aria-controls="panelAccepted" data-tab="accepted">
+        <i data-lucide="check-circle" width="15" height="15"></i>
+        <span>Accepted</span>
+        <span class="int-tab-badge accepted" id="badgeAccepted">0</span>
+      </button>
+      <button class="int-tab"        role="tab" id="tabRejected" aria-selected="false" aria-controls="panelRejected" data-tab="rejected">
+        <i data-lucide="x-circle"    width="15" height="15"></i>
+        <span>Rejected</span>
+        <span class="int-tab-badge rejected" id="badgeRejected">0</span>
+      </button>
+    </div>
+
+    <!-- TAB PANELS -->
+    <div class="int-panels-wrap container-xxl">
+
+      <!-- PENDING -->
+      <section class="int-panel" id="panelPending" role="tabpanel" aria-labelledby="tabPending">
+        <div class="int-grid" id="gridPending" role="list" aria-label="Pending interests"></div>
+        <div class="int-empty" id="emptyPending" style="display:none;">
+          <div class="int-empty-icon"><i data-lucide="inbox" width="32" height="32"></i></div>
+          <h3>No pending interests</h3>
+          <p id="emptyPendingMsg">You have no pending interest requests right now.</p>
+        </div>
+        <div class="int-skeleton-grid" id="skelPending">
+          <div class="int-skel-card"><div class="int-skel-img"></div><div class="int-skel-body"><div class="int-skel-line w55"></div><div class="int-skel-line w35"></div><div class="int-skel-line w70"></div></div></div>
+          <div class="int-skel-card"><div class="int-skel-img"></div><div class="int-skel-body"><div class="int-skel-line w55"></div><div class="int-skel-line w35"></div><div class="int-skel-line w70"></div></div></div>
+          <div class="int-skel-card"><div class="int-skel-img"></div><div class="int-skel-body"><div class="int-skel-line w55"></div><div class="int-skel-line w35"></div><div class="int-skel-line w70"></div></div></div>
+          <div class="int-skel-card"><div class="int-skel-img"></div><div class="int-skel-body"><div class="int-skel-line w55"></div><div class="int-skel-line w35"></div><div class="int-skel-line w70"></div></div></div>
+        </div>
+      </section>
+
+      <!-- ACCEPTED -->
+      <section class="int-panel" id="panelAccepted" role="tabpanel" aria-labelledby="tabAccepted" hidden>
+        <div class="int-grid" id="gridAccepted" role="list" aria-label="Accepted interests"></div>
+        <div class="int-empty" id="emptyAccepted" style="display:none;">
+          <div class="int-empty-icon accepted"><i data-lucide="heart" width="32" height="32"></i></div>
+          <h3>No accepted interests yet</h3>
+          <p id="emptyAcceptedMsg">Accepted matches will appear here.</p>
+        </div>
+        <div class="int-skeleton-grid" id="skelAccepted" style="display:none;"></div>
+      </section>
+
+      <!-- REJECTED -->
+      <section class="int-panel" id="panelRejected" role="tabpanel" aria-labelledby="tabRejected" hidden>
+        <div class="int-grid" id="gridRejected" role="list" aria-label="Rejected interests"></div>
+        <div class="int-empty" id="emptyRejected" style="display:none;">
+          <div class="int-empty-icon rejected"><i data-lucide="x-circle" width="32" height="32"></i></div>
+          <h3>No rejected interests</h3>
+          <p id="emptyRejectedMsg">Declined requests will appear here.</p>
+        </div>
+        <div class="int-skeleton-grid" id="skelRejected" style="display:none;"></div>
+      </section>
+
+    </div><!-- /panels-wrap -->
+  </main>
+
+  <!-- ── ACCEPT / REJECT CONFIRMATION TOAST ── -->
+  <div class="int-toast" id="intToast" role="alert" aria-live="polite" aria-atomic="true">
+    <span class="int-toast-icon" id="intToastIcon"></span>
+    <span class="int-toast-msg"  id="intToastMsg"></span>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Base JS -->
+  <script src="assets/js/script.js"></script>
+  <!-- Page JS -->
+  <script src="assets/js/interests.js"></script>
+
+</body>
+</html>
