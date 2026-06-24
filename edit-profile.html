@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile — HimRishtey</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/edit-profile.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER (project standard) ========== -->
+  <header class="top-navbar" role="banner">
+    <div class="navbar-inner container-fluid">
+      <div class="navbar-left">
+        <button class="hamburger-btn" id="sidebarToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+          <i data-lucide="menu" width="22" height="22"></i>
+        </button>
+        <div class="navbar-brand">
+          <img src="assets/images/logo.png" alt="Himrishtey Logo" class="navbar-logo">
+        </div>
+        <span class="navbar-greeting">Hi, <strong>Priya</strong> 👋</span>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-wallet">
+          <i data-lucide="wallet" width="18" height="18"></i>
+          <span class="wallet-balance">₹1,250</span>
+        </div>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+        <button class="profile-avatar-btn" id="profileQuickViewBtn" aria-label="Open profile quick view" aria-expanded="false" aria-controls="profileQuickView">
+          <img src="https://picsum.photos/seed/bride1/40/40" alt="Priya Sharma" width="40" height="40" class="navbar-avatar" loading="lazy" />
+          <span class="online-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== SIDEBAR DRAWER (from base) ========== -->
+ 
+
+  <!-- ========== MAIN LAYOUT ========== -->
+  <main class="ep-main" id="main-content">
+
+    <!-- Page Header -->
+    <div class="ep-page-header">
+      <div>
+        <h1 class="ep-page-title">Edit Profile</h1>
+        <p class="ep-page-subtitle">Keep your profile complete to get better matches</p>
+      </div>
+      <!-- Overall completion bar -->
+      <div class="ep-overall-completion">
+        <span class="ep-completion-label">Profile Completion</span>
+        <div class="ep-completion-bar-wrap">
+          <div class="ep-completion-bar" style="width: 65%"></div>
+        </div>
+        <span class="ep-completion-pct">65%</span>
+      </div>
+    </div>
+
+    <div class="ep-layout">
+
+      <!-- ===== LEFT SIDEBAR TABS ===== -->
+      <aside class="ep-tab-sidebar" role="tablist" aria-label="Profile sections">
+        <button class="ep-tab-btn" data-tab="basic-info" role="tab" aria-selected="false" aria-controls="tab-basic-info">
+            <span class="ep-tab-icon"><i data-lucide="badge-info" width="18" height="18"></i></span>
+            <span class="ep-tab-label">Basic Info</span>
+            <span class="ep-tab-status incomplete" title="Incomplete"><i data-lucide="circle" width="14" height="14"></i></span>
+        </button>
+        <button class="ep-tab-btn active" data-tab="astro" role="tab" aria-selected="true" aria-controls="tab-astro">
+          <span class="ep-tab-icon"><i data-lucide="star" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Astro & Kundli</span>
+          <span class="ep-tab-status complete" title="Complete"><i data-lucide="check-circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="education" role="tab" aria-selected="false" aria-controls="tab-education">
+          <span class="ep-tab-icon"><i data-lucide="graduation-cap" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Education & Career</span>
+          <span class="ep-tab-status incomplete" title="Incomplete"><i data-lucide="circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="family" role="tab" aria-selected="false" aria-controls="tab-family">
+          <span class="ep-tab-icon"><i data-lucide="users" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Family</span>
+          <span class="ep-tab-status incomplete" title="Incomplete"><i data-lucide="circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="lifestyle" role="tab" aria-selected="false" aria-controls="tab-lifestyle">
+          <span class="ep-tab-icon"><i data-lucide="heart-pulse" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Lifestyle</span>
+          <span class="ep-tab-status incomplete" title="Incomplete"><i data-lucide="circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="religion" role="tab" aria-selected="false" aria-controls="tab-religion">
+          <span class="ep-tab-icon"><i data-lucide="flame" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Religion</span>
+          <span class="ep-tab-status complete" title="Complete"><i data-lucide="check-circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="preferences" role="tab" aria-selected="false" aria-controls="tab-preferences">
+          <span class="ep-tab-icon"><i data-lucide="sliders-horizontal" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Partner Preferences</span>
+          <span class="ep-tab-status incomplete" title="Incomplete"><i data-lucide="circle" width="14" height="14"></i></span>
+        </button>
+
+        <button class="ep-tab-btn" data-tab="contact" role="tab" aria-selected="false" aria-controls="tab-contact">
+          <span class="ep-tab-icon"><i data-lucide="phone" width="18" height="18"></i></span>
+          <span class="ep-tab-label">Contact Info</span>
+          <span class="ep-tab-status complete" title="Complete"><i data-lucide="check-circle" width="14" height="14"></i></span>
+        </button>
+
+      </aside>
+
+      <!-- ===== MOBILE TAB PILLS ===== -->
+      <div class="ep-mobile-tabs" role="tablist" aria-label="Profile sections mobile">
+        <button class="ep-mobile-tab" data-tab="basic-info"><i data-lucide="badge-info" width="16" height="16"></i> Basic Info</button>
+        <button class="ep-mobile-tab active" data-tab="astro"><i data-lucide="star" width="16" height="16"></i> Astro</button>
+        <button class="ep-mobile-tab" data-tab="education"><i data-lucide="graduation-cap" width="16" height="16"></i> Education</button>
+        <button class="ep-mobile-tab" data-tab="family"><i data-lucide="users" width="16" height="16"></i> Family</button>
+        <button class="ep-mobile-tab" data-tab="lifestyle"><i data-lucide="heart-pulse" width="16" height="16"></i> Lifestyle</button>
+        <button class="ep-mobile-tab" data-tab="religion"><i data-lucide="flame" width="16" height="16"></i> Religion</button>
+        <button class="ep-mobile-tab" data-tab="preferences"><i data-lucide="sliders-horizontal" width="16" height="16"></i> Preferences</button>
+        <button class="ep-mobile-tab" data-tab="contact"><i data-lucide="phone" width="16" height="16"></i> Contact</button>
+      </div>
+
+      <!-- ===== TAB CONTENT PANELS ===== -->
+      <div class="ep-tab-content">
+
+        <!-- UNSAVED CHANGES TOAST -->
+        <div class="ep-unsaved-toast" id="epUnsavedToast" aria-live="polite" hidden>
+          <i data-lucide="alert-circle" width="16" height="16"></i>
+          You have unsaved changes in this section.
+        </div>
+        <!-- ===== TAB 1: BASIC INFO ===== -->
+        <section class="ep-tab-panel" id="tab-basic-info" role="tabpanel" hidden>
+            <div class="ep-section-header">
+                <h2 class="ep-section-title"><i data-lucide="badge-info" width="20" height="20"></i> Basic Info</h2>
+            </div>
+
+            <form class="ep-form" id="form-basic-info" data-section="basic-info" novalidate>
+                <div class="ep-field-group ep-full-width">
+                <label class="ep-label" for="about_me">About</label>
+                <textarea class="ep-textarea" id="about_me" name="about_me" rows="3" placeholder="Write a short introduction about yourself..."></textarea>
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="profile_created_for">Profile Created By</label>
+                <div class="ep-select-wrapper">
+                    <select class="ep-select" id="profile_created_for" name="profile_created_for">
+                    <option value="">Select</option>
+                    <option>Self</option>
+                    <option>Parent</option>
+                    <option>Sibling</option>
+                    <option>Relative</option>
+                    <option>Friend</option>
+                    </select>
+                    <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+                </div>
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="birth_date">Date of Birth</label>
+                <input class="ep-input" type="date" id="birth_date" name="birth_date" />
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="birth_time">Time of Birth</label>
+                <input class="ep-input" type="time" id="birth_time" name="birth_time" />
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="height">Height</label>
+                <div class="ep-select-wrapper">
+                    <select class="ep-select" id="height" name="height">
+                    <option value="">Select</option>
+                    <option>4'6"</option>
+                    <option>4'8"</option>
+                    <option>4'10"</option>
+                    <option>5'0"</option>
+                    <option>5'2"</option>
+                    <option>5'4"</option>
+                    <option>5'6"</option>
+                    <option>5'8"</option>
+                    <option>5'10"</option>
+                    <option>6'0"</option>
+                    <option>6'2"</option>
+                    </select>
+                    <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+                </div>
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="religion">Religion</label>
+                <div class="ep-select-wrapper">
+                    <select class="ep-select" id="religion" name="religion">
+                    <option value="">Select</option>
+                    <option>Hindu</option>
+                    <option>Muslim</option>
+                    <option>Christian</option>
+                    <option>Sikh</option>
+                    <option>Buddhist</option>
+                    <option>Jain</option>
+                    </select>
+                    <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+                </div>
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="cast">Caste</label>
+                <input class="ep-input" type="text" id="cast" name="cast" placeholder="e.g. Brahmin" />
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="marital_status">Marital Status</label>
+                <div class="ep-select-wrapper">
+                    <select class="ep-select" id="marital_status" name="marital_status">
+                    <option value="">Select</option>
+                    <option>Never Married</option>
+                    <option>Divorced</option>
+                    <option>Widowed</option>
+                    <option>Awaiting Divorce</option>
+                    </select>
+                    <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+                </div>
+                </div>
+
+                <div class="ep-field-group" id="children-wrap" hidden>
+                <label class="ep-label" for="no_of_child">Children</label>
+                <div class="ep-select-wrapper">
+                    <select class="ep-select" id="no_of_child" name="no_of_child">
+                    <option value="">Select</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4+</option>
+                    </select>
+                    <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+                </div>
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="country_living_in">Country</label>
+                <input class="ep-input" type="text" id="country_living_in" name="country_living_in" placeholder="e.g. India" />
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="state_living_in">State</label>
+                <input class="ep-input" type="text" id="state_living_in" name="state_living_in" placeholder="e.g. Himachal Pradesh" />
+                </div>
+
+                <div class="ep-field-group">
+                <label class="ep-label" for="city_living_in">City</label>
+                <input class="ep-input" type="text" id="city_living_in" name="city_living_in" placeholder="e.g. Shimla" />
+                </div>
+
+                <div class="ep-form-footer">
+                <button type="submit" class="ep-save-btn">
+                    <i data-lucide="save" width="16" height="16"></i> Save Basic Info
+                </button>
+                </div>
+            </form>
+            </section>
+
+        <!-- ===== TAB 1: ASTRO & KUNDLI ===== -->
+        <section class="ep-tab-panel active" id="tab-astro" role="tabpanel" aria-labelledby="btn-astro">
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="star" width="20" height="20"></i> Astro & Kundli</h2>
+          </div>
+
+          <!-- Read-only info card -->
+          <div class="ep-info-card">
+            <div class="ep-info-row">
+              <span class="ep-info-label">Date of Birth</span>
+              <span class="ep-info-value">12 May 1997</span>
+            </div>
+            <div class="ep-info-row">
+              <span class="ep-info-label">Time of Birth</span>
+              <span class="ep-info-value">08:30 AM</span>
+            </div>
+            <a href="#" class="ep-info-link"><i data-lucide="external-link" width="14" height="14"></i> To edit date &amp; time, click here</a>
+          </div>
+
+          <form class="ep-form" id="form-astro" data-section="astro" novalidate>
+            <div class="ep-field-group">
+              <label class="ep-label" for="manglik">Manglik</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="manglik" name="manglik">
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="birth_place">Place of Birth</label>
+              <input class="ep-input" type="text" id="birth_place" name="birth_place" placeholder="e.g. Shimla, Himachal Pradesh" autocomplete="off" />
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Astro Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 2: EDUCATION & CAREER ===== -->
+        <section class="ep-tab-panel" id="tab-education" role="tabpanel" aria-labelledby="btn-education" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="graduation-cap" width="20" height="20"></i> Education &amp; Career</h2>
+          </div>
+
+          <form class="ep-form" id="form-education" data-section="education" novalidate>
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label" for="about_my_education">About My Career &amp; Education</label>
+              <textarea class="ep-textarea" id="about_my_education" name="about_my_education" rows="3" placeholder="Brief description about your education and career..."></textarea>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="education">Highest Education</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="education" name="education">
+                  <option value="">Select</option>
+                  <option>10th</option><option>12th</option><option>Diploma</option>
+                  <option>B.A.</option><option>B.Sc.</option><option>B.Com.</option>
+                  <option>B.Tech / B.E.</option><option>BBA</option><option>BCA</option>
+                  <option>M.A.</option><option>M.Sc.</option><option>M.Com.</option>
+                  <option>M.Tech / M.E.</option><option>MBA</option><option>MCA</option>
+                  <option>Ph.D.</option><option>Other</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="any_other_qualifications">Other Qualification</label>
+              <input class="ep-input" type="text" id="any_other_qualifications" name="any_other_qualifications" placeholder="e.g. Chartered Accountant" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="employed_in">Employed In</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="employed_in" name="employed_in">
+                  <option value="">Select</option>
+                  <option>Government</option><option>Private</option><option>Business / Self Employed</option>
+                  <option>Defense</option><option>Not Working</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="occupation">Occupation</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="occupation" name="occupation">
+                  <option value="">Select</option>
+                  <option>Software Engineer</option><option>Doctor</option><option>Teacher</option>
+                  <option>Lawyer</option><option>Banker</option><option>Businessman</option>
+                  <option>Farmer</option><option>Nurse</option><option>Architect</option>
+                  <option>Other</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="job_location">Job Location</label>
+              <input class="ep-input" type="text" id="job_location" name="job_location" placeholder="e.g. Shimla" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="organization_name">Organization Name</label>
+              <input class="ep-input" type="text" id="organization_name" name="organization_name" placeholder="e.g. HP Government" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="annual_income">Annual Income</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="annual_income" name="annual_income">
+                  <option value="">Select</option>
+                  <option>Below 1 LPA</option><option>1–2 LPA</option><option>2–3 LPA</option>
+                  <option>3–5 LPA</option><option>5–7 LPA</option><option>7–10 LPA</option>
+                  <option>10–15 LPA</option><option>15–20 LPA</option><option>20–30 LPA</option>
+                  <option>30–50 LPA</option><option>50 LPA+</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Education Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 3: FAMILY ===== -->
+        <section class="ep-tab-panel" id="tab-family" role="tabpanel" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="users" width="20" height="20"></i> Family Details</h2>
+          </div>
+
+          <form class="ep-form" id="form-family" data-section="family" novalidate>
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label" for="about_family">About My Family</label>
+              <textarea class="ep-textarea" id="about_family" name="about_family" rows="3" placeholder="Brief about your family background..."></textarea>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="family_status">Family Status</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="family_status" name="family_status">
+                  <option value="">Select</option>
+                  <option>Middle Class</option><option>Upper Middle Class</option>
+                  <option>Rich / Affluent</option><option>High Class</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="native_place">Native Place</label>
+              <input class="ep-input" type="text" id="native_place" name="native_place" placeholder="e.g. Mandi, Himachal Pradesh" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="father_name">Father's Name</label>
+              <input class="ep-input" type="text" id="father_name" name="father_name" placeholder="Father's full name" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="father_occupation">Father's Occupation</label>
+              <input class="ep-input" type="text" id="father_occupation" name="father_occupation" placeholder="e.g. Retired Govt. Officer" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="mother_name">Mother's Name</label>
+              <input class="ep-input" type="text" id="mother_name" name="mother_name" placeholder="Mother's full name" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="mother_occupation">Mother's Occupation</label>
+              <input class="ep-input" type="text" id="mother_occupation" name="mother_occupation" placeholder="e.g. Homemaker" />
+            </div>
+
+            <!-- Sibling row -->
+            <div class="ep-field-group">
+              <label class="ep-label" for="no_of_brothers">Brothers</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="no_of_brothers" name="no_of_brothers">
+                  <option value="">Select</option>
+                  <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="married_brothers">Married Brothers</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="married_brothers" name="married_brothers">
+                  <option value="">Select</option>
+                  <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="no_of_sisters">Sisters</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="no_of_sisters" name="no_of_sisters">
+                  <option value="">Select</option>
+                  <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="married_sisters">Married Sisters</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="married_sisters" name="married_sisters">
+                  <option value="">Select</option>
+                  <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Family Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 4: LIFESTYLE ===== -->
+        <section class="ep-tab-panel" id="tab-lifestyle" role="tabpanel" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="heart-pulse" width="20" height="20"></i> Lifestyle</h2>
+          </div>
+
+          <form class="ep-form" id="form-lifestyle" data-section="lifestyle" novalidate>
+            <div class="ep-field-group">
+              <label class="ep-label" for="diet">Diet</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="diet" name="diet">
+                  <option value="">Select</option>
+                  <option>Veg</option><option>Veg & Non-Veg</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="is_smoking">Smoking</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="is_smoking" name="is_smoking">
+                  <option value="">Select</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="is_drinking">Drinking</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="is_drinking" name="is_drinking">
+                  <option value="">Select</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="any_disability">Any Disability</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="any_disability" name="any_disability">
+                  <option value="">Select</option>
+                  <option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <!-- Conditional field — shown when disability = Yes -->
+            <div class="ep-field-group ep-full-width" id="disability-detail-wrap" hidden>
+              <label class="ep-label" for="disability_detail">Please describe the disability</label>
+              <input class="ep-input" type="text" id="disability_detail" name="disability_detail" placeholder="Brief description..." />
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Lifestyle Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 5: RELIGION ===== -->
+        <section class="ep-tab-panel" id="tab-religion" role="tabpanel" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="flame" width="20" height="20"></i> Religion Info</h2>
+          </div>
+
+          <!-- Read-only community card -->
+          <div class="ep-info-card">
+            <div class="ep-info-row">
+              <span class="ep-info-label">Community / Caste</span>
+              <span class="ep-info-value">Brahmin</span>
+            </div>
+            <a href="#" class="ep-info-link"><i data-lucide="external-link" width="14" height="14"></i> To edit community, click here</a>
+          </div>
+
+          <form class="ep-form" id="form-religion" data-section="religion" novalidate>
+            <div class="ep-field-group">
+              <label class="ep-label" for="gotra">Gotra <span class="ep-required">*</span></label>
+              <input class="ep-input" type="text" id="gotra" name="gotra" placeholder="e.g. Kashyap" required />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="sub_cast">Sub Community</label>
+              <input class="ep-input" type="text" id="sub_cast" name="sub_cast" placeholder="e.g. Kanyakubja" />
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Religion Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 6: PARTNER PREFERENCES ===== -->
+        <section class="ep-tab-panel" id="tab-preferences" role="tabpanel" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="sliders-horizontal" width="20" height="20"></i> Partner Preferences</h2>
+          </div>
+
+          <form class="ep-form" id="form-preferences" data-section="preferences" novalidate>
+
+            <!-- Age Range -->
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label">Age Range: <strong id="age-range-label">18 – 35</strong> years</label>
+              <div class="ep-range-row">
+                <input type="range" class="ep-range" id="age_from" name="partner_age_from" min="18" max="70" value="18" step="1">
+                <input type="range" class="ep-range" id="age_to" name="partner_age_to" min="18" max="70" value="35" step="1">
+              </div>
+            </div>
+
+            <!-- Height Range -->
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label">Height Range: <strong id="height-range-label">4'6" – 5'6"</strong></label>
+              <div class="ep-range-row">
+                <input type="range" class="ep-range" id="height_from" name="partner_height_from" min="1" max="28" value="1" step="1">
+                <input type="range" class="ep-range" id="height_to" name="partner_height_to" min="1" max="28" value="14" step="1">
+              </div>
+            </div>
+
+            <!-- Income Range -->
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label">Annual Income Range: <strong id="income-range-label">0 – 10 LPA</strong></label>
+              <div class="ep-range-row">
+                <input type="range" class="ep-range" id="income_from" name="partner_annual_income_from" min="0" max="50" value="0" step="1">
+                <input type="range" class="ep-range" id="income_to" name="partner_annual_income_to" min="0" max="50" value="10" step="1">
+              </div>
+            </div>
+
+            <div class="ep-field-group ep-full-width">
+              <label class="ep-label" for="about_my_partner">About My Partner</label>
+              <textarea class="ep-textarea" id="about_my_partner" name="about_my_partner" rows="3" placeholder="What are you looking for in a partner..."></textarea>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="looking_for">Partner Marital Status</label>
+              <div class="ep-multiselect-trigger" data-target="looking_for" tabindex="0" role="button" aria-haspopup="true">
+                <span class="ep-multiselect-value" id="looking_for-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="looking_for" name="looking_for" value="Any" />
+              <div class="ep-multiselect-dropdown" id="looking_for-dropdown" hidden>
+                <label><input type="checkbox" value="Never Married"> Never Married</label>
+                <label><input type="checkbox" value="Divorced"> Divorced</label>
+                <label><input type="checkbox" value="Widowed"> Widowed</label>
+                <label><input type="checkbox" value="Awaiting Divorce"> Awaiting Divorce</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_religion">Religion</label>
+              <div class="ep-multiselect-trigger" data-target="partner_religion" tabindex="0" role="button">
+                <span class="ep-multiselect-value" id="partner_religion-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="partner_religion" name="partner_religion" value="Any" />
+              <div class="ep-multiselect-dropdown" id="partner_religion-dropdown" hidden>
+                <label><input type="checkbox" value="Hindu"> Hindu</label>
+                <label><input type="checkbox" value="Muslim"> Muslim</label>
+                <label><input type="checkbox" value="Christian"> Christian</label>
+                <label><input type="checkbox" value="Sikh"> Sikh</label>
+                <label><input type="checkbox" value="Buddhist"> Buddhist</label>
+                <label><input type="checkbox" value="Jain"> Jain</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_mothertongue">Mother Tongue</label>
+              <div class="ep-multiselect-trigger" data-target="partner_mothertongue" tabindex="0" role="button">
+                <span class="ep-multiselect-value" id="partner_mothertongue-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="partner_mothertongue" name="partner_mothertongue" value="Any" />
+              <div class="ep-multiselect-dropdown" id="partner_mothertongue-dropdown" hidden>
+                <label><input type="checkbox" value="Hindi"> Hindi</label>
+                <label><input type="checkbox" value="Pahari"> Pahari</label>
+                <label><input type="checkbox" value="Punjabi"> Punjabi</label>
+                <label><input type="checkbox" value="Dogri"> Dogri</label>
+                <label><input type="checkbox" value="Kinnauri"> Kinnauri</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_cast">Caste</label>
+              <div class="ep-multiselect-trigger" data-target="partner_cast" tabindex="0" role="button">
+                <span class="ep-multiselect-value" id="partner_cast-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="partner_cast" name="partner_cast" value="Any" />
+              <div class="ep-multiselect-dropdown" id="partner_cast-dropdown" hidden>
+                <label><input type="checkbox" value="Any"> Any</label>
+                <label><input type="checkbox" value="Brahmin"> Brahmin</label>
+                <label><input type="checkbox" value="Rajput"> Rajput</label>
+                <label><input type="checkbox" value="SC/ST"> SC/ST</label>
+                <label><input type="checkbox" value="Other"> Other</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="is_partner_manglik">Partner Manglik</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="is_partner_manglik" name="is_partner_manglik">
+                  <option>Any</option><option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_education">Highest Qualification</label>
+              <div class="ep-multiselect-trigger" data-target="partner_education" tabindex="0" role="button">
+                <span class="ep-multiselect-value" id="partner_education-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="partner_education" name="partner_education" value="Any" />
+              <div class="ep-multiselect-dropdown" id="partner_education-dropdown" hidden>
+                <label><input type="checkbox" value="10th"> 10th</label>
+                <label><input type="checkbox" value="12th"> 12th</label>
+                <label><input type="checkbox" value="Graduate"> Graduate</label>
+                <label><input type="checkbox" value="Post Graduate"> Post Graduate</label>
+                <label><input type="checkbox" value="Doctorate"> Doctorate</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_occupation">Employed In</label>
+              <div class="ep-multiselect-trigger" data-target="partner_occupation" tabindex="0" role="button">
+                <span class="ep-multiselect-value" id="partner_occupation-display">Any</span>
+                <i data-lucide="chevron-down" width="16" height="16"></i>
+              </div>
+              <input type="hidden" id="partner_occupation" name="partner_occupation" value="Any" />
+              <div class="ep-multiselect-dropdown" id="partner_occupation-dropdown" hidden>
+                <label><input type="checkbox" value="Government"> Government</label>
+                <label><input type="checkbox" value="Private"> Private</label>
+                <label><input type="checkbox" value="Business / Self Employed"> Business / Self Employed</label>
+                <label><input type="checkbox" value="Defense"> Defense</label>
+                <label><input type="checkbox" value="Not Working"> Not Working</label>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="partner_diet">Diet</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="partner_diet" name="partner_diet">
+                  <option>Any</option><option>Veg</option><option>Veg & Non-Veg</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="is_partner_smoking">Partner Smoking</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="is_partner_smoking" name="is_partner_smoking">
+                  <option>Any</option><option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="is_partner_drinking">Partner Drinking</label>
+              <div class="ep-select-wrapper">
+                <select class="ep-select" id="is_partner_drinking" name="is_partner_drinking">
+                  <option>Any</option><option>Yes</option><option>No</option>
+                </select>
+                <i data-lucide="chevron-down" width="16" height="16" class="ep-select-icon"></i>
+              </div>
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Preferences
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== TAB 7: CONTACT ===== -->
+        <section class="ep-tab-panel" id="tab-contact" role="tabpanel" hidden>
+          <div class="ep-section-header">
+            <h2 class="ep-section-title"><i data-lucide="phone" width="20" height="20"></i> Contact Info</h2>
+          </div>
+
+          <form class="ep-form" id="form-contact" data-section="contact" novalidate>
+            <div class="ep-field-group">
+              <label class="ep-label" for="mobile_number">Phone Number <span class="ep-required">*</span></label>
+              <input class="ep-input" type="tel" id="mobile_number" name="mobile_number" placeholder="+91 98XXXXXXXX" maxlength="13" required />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="alternate_number">Alternate Phone Number</label>
+              <input class="ep-input" type="tel" id="alternate_number" name="alternate_number" placeholder="+91 98XXXXXXXX" maxlength="13" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="whatsapp_number">WhatsApp Number</label>
+              <input class="ep-input" type="tel" id="whatsapp_number" name="whatsapp_number" placeholder="+91 98XXXXXXXX" maxlength="13" />
+            </div>
+
+            <div class="ep-field-group">
+              <label class="ep-label" for="email">Email ID <span class="ep-required">*</span></label>
+              <input class="ep-input" type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="ep-form-footer">
+              <button type="submit" class="ep-save-btn">
+                <i data-lucide="save" width="16" height="16"></i> Save Contact Info
+              </button>
+            </div>
+          </form>
+        </section>
+
+      </div><!-- /ep-tab-content -->
+    </div><!-- /ep-layout -->
+  </main>
+
+  <!-- ===== SUCCESS TOAST ===== -->
+  <div class="ep-toast" id="epSuccessToast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" width="18" height="18"></i>
+    <span id="epToastMsg">Profile Updated Successfully!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/edit-profile.js"></script>
+</body>
+</html>
