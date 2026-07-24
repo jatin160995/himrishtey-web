@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Your Profile – HimRishtey</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Signup Page CSS -->
+  <link rel="stylesheet" href="assets/css/signup.css" />
+</head>
+<body class="signup-body">
+
+  <!-- ================= TOP MINIMAL NAVBAR ================= -->
+  <header class="su-navbar">
+    <div class="su-navbar-inner">
+      <a href="index.html" class="su-brand" aria-label="HimRishtey Home">
+        <img src="assets/images/logo.png" alt="Himrishtey Logo" class="navbar-logo">
+      </a>
+      <div class="su-navbar-right">
+        <span class="su-navbar-text">Already have an account? <a href="login.html" class="su-navbar-link">Sign in</a></span>
+        <button class="theme-toggle-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <i data-lucide="moon" width="18" height="18"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="su-main">
+    <div class="container-xxl">
+      <div class="su-card">
+
+        <!-- ===== STEPPER (hidden on photo / success) ===== -->
+        <div class="su-stepper-zone" id="suStepperZone">
+          <ol class="su-stepper" id="suStepper" aria-label="Signup progress">
+            <li class="su-step is-active" data-step-index="1">
+              <span class="su-step-circle"><span class="su-step-num">1</span></span>
+              <span class="su-step-label">About You</span>
+            </li>
+            <li class="su-step" data-step-index="2">
+              <span class="su-step-circle"><span class="su-step-num">2</span></span>
+              <span class="su-step-label">Career</span>
+            </li>
+            <li class="su-step" data-step-index="3">
+              <span class="su-step-circle"><span class="su-step-num">3</span></span>
+              <span class="su-step-label">Community</span>
+            </li>
+          </ol>
+          <p class="su-step-caption" id="suStepCaption">Add some information about yourself</p>
+        </div>
+
+        <!-- ========================================================
+             STEP 1 — ABOUT YOU
+             (mirrors Flutter SignUpTwo: tob, height, country, state, city)
+             ======================================================== -->
+        <form class="su-panel is-active" id="stepForm1" data-panel="1" novalidate>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="tob">
+                <i data-lucide="clock" width="14" height="14"></i>
+                Time of Birth
+              </label>
+              <div class="input-wrap">
+                <input type="time" id="tob" name="tob" class="form-input" required />
+              </div>
+              <span class="form-error" id="tobError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="height">
+                <i data-lucide="ruler" width="14" height="14"></i>
+                Height
+              </label>
+              <div class="input-wrap select-wrap">
+                <select id="height" name="height" class="form-input form-select" required>
+                  <option value="" disabled selected>Select height</option>
+                  <option value="4'6&quot; (137 cm)">4'6" (137 cm)</option>
+                  <option value="4'7&quot; (140 cm)">4'7" (140 cm)</option>
+                  <option value="4'8&quot; (142 cm)">4'8" (142 cm)</option>
+                  <option value="4'9&quot; (145 cm)">4'9" (145 cm)</option>
+                  <option value="4'10&quot; (147 cm)">4'10" (147 cm)</option>
+                  <option value="4'11&quot; (150 cm)">4'11" (150 cm)</option>
+                  <option value="5'0&quot; (152 cm)">5'0" (152 cm)</option>
+                  <option value="5'1&quot; (155 cm)">5'1" (155 cm)</option>
+                  <option value="5'2&quot; (157 cm)">5'2" (157 cm)</option>
+                  <option value="5'3&quot; (160 cm)">5'3" (160 cm)</option>
+                  <option value="5'4&quot; (163 cm)">5'4" (163 cm)</option>
+                  <option value="5'5&quot; (165 cm)">5'5" (165 cm)</option>
+                  <option value="5'6&quot; (168 cm)">5'6" (168 cm)</option>
+                  <option value="5'7&quot; (170 cm)">5'7" (170 cm)</option>
+                  <option value="5'8&quot; (173 cm)">5'8" (173 cm)</option>
+                  <option value="5'9&quot; (175 cm)">5'9" (175 cm)</option>
+                  <option value="5'10&quot; (178 cm)">5'10" (178 cm)</option>
+                  <option value="5'11&quot; (180 cm)">5'11" (180 cm)</option>
+                  <option value="6'0&quot; (183 cm)">6'0" (183 cm)</option>
+                  <option value="6'1&quot; (185 cm)">6'1" (185 cm)</option>
+                  <option value="6'2&quot; (188 cm)">6'2" (188 cm)</option>
+                  <option value="6'3&quot; (191 cm)">6'3" (191 cm)</option>
+                  <option value="6'4&quot; (193 cm)">6'4" (193 cm)</option>
+                  <option value="6'5&quot; (196 cm)">6'5" (196 cm)</option>
+                </select>
+                <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+              </div>
+              <span class="form-error" id="heightError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="country">
+              <i data-lucide="globe" width="14" height="14"></i>
+              Country
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="country" name="country" class="form-input form-select" required>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Other">Other</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="countryError" role="alert"></span>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="state">
+                <i data-lucide="map" width="14" height="14"></i>
+                State
+              </label>
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  class="form-input"
+                  placeholder="Select or type your state"
+                  list="stateList"
+                  autocomplete="off"
+                  required
+                />
+                <datalist id="stateList"></datalist>
+              </div>
+              <span class="form-error" id="stateError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="city">
+                <i data-lucide="map-pin" width="14" height="14"></i>
+                City
+              </label>
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  class="form-input"
+                  placeholder="Select state first"
+                  list="cityList"
+                  autocomplete="off"
+                  required
+                  disabled
+                />
+                <datalist id="cityList"></datalist>
+              </div>
+              <span class="form-error" id="cityError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="su-actions">
+            <a href="login.html" class="btn-su-secondary">
+              <i data-lucide="arrow-left" width="16" height="16"></i>
+              Back
+            </a>
+            <button type="submit" class="btn-login" id="step1SubmitBtn">
+              <span class="btn-login-text">Next <i data-lucide="arrow-right" width="16" height="16"></i></span>
+              <span class="btn-login-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        <!-- ========================================================
+             STEP 2 — CAREER
+             (mirrors Flutter SignUpThree: education, employed_in, occupation, income)
+             ======================================================== -->
+        <form class="su-panel" id="stepForm2" data-panel="2" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="education">
+              <i data-lucide="graduation-cap" width="14" height="14"></i>
+              Education
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="education" name="education" class="form-input form-select" required>
+                <option value="" disabled selected>Select education</option>
+                <option>High School</option>
+                <option>Diploma</option>
+                <option>Bachelor's Degree</option>
+                <option>Master's Degree</option>
+                <option>MBA / PGDM</option>
+                <option>Engineering (B.Tech / B.E.)</option>
+                <option>Medical (MBBS / BDS / MD)</option>
+                <option>Law (LLB / LLM)</option>
+                <option>Chartered Accountant (CA)</option>
+                <option>Doctorate (Ph.D.)</option>
+                <option>Other</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="educationError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="employedIn">
+              <i data-lucide="briefcase" width="14" height="14"></i>
+              Employed In
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="employedIn" name="employedIn" class="form-input form-select" required>
+                <option value="" disabled selected>Select employment type</option>
+                <option>Private Sector</option>
+                <option>Government / PSU</option>
+                <option>Business / Self Employed</option>
+                <option>Defence Services</option>
+                <option>Not Employed in</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="employedInError" role="alert"></span>
+          </div>
+
+          <div class="form-group" id="occupationGroup">
+            <label class="form-label" for="occupation">
+              <i data-lucide="id-card" width="14" height="14"></i>
+              Occupation
+            </label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                class="form-input"
+                placeholder="e.g. Software Engineer, Teacher, Doctor"
+                required
+              />
+            </div>
+            <span class="form-error" id="occupationError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="income">
+              <i data-lucide="indian-rupee" width="14" height="14"></i>
+              Annual Income
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="income" name="income" class="form-input form-select" required>
+                <option value="" disabled selected>Select annual income</option>
+                <option>No Income</option>
+                <option>Below ₹2 Lakh</option>
+                <option>₹2 – 5 Lakh</option>
+                <option>₹5 – 10 Lakh</option>
+                <option>₹10 – 20 Lakh</option>
+                <option>₹20 – 50 Lakh</option>
+                <option>₹50 Lakh &amp; Above</option>
+                <option>Prefer not to say</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="incomeError" role="alert"></span>
+          </div>
+
+          <div class="su-actions">
+            <button type="button" class="btn-su-secondary" data-back>
+              <i data-lucide="arrow-left" width="16" height="16"></i>
+              Back
+            </button>
+            <button type="submit" class="btn-login" id="step2SubmitBtn">
+              <span class="btn-login-text">Next <i data-lucide="arrow-right" width="16" height="16"></i></span>
+              <span class="btn-login-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        <!-- ========================================================
+             STEP 3 — COMMUNITY
+             (mirrors Flutter SignUpFour: marital, tongue, religion, cast,
+             manglik, horoscope, children)
+             ======================================================== -->
+        <form class="su-panel" id="stepForm3" data-panel="3" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="marital">
+              <i data-lucide="heart" width="14" height="14"></i>
+              Marital Status
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="marital" name="marital" class="form-input form-select" required>
+                <option value="" disabled selected>Select marital status</option>
+                <option>Never Married</option>
+                <option>Divorced</option>
+                <option>Widowed</option>
+                <option>Awaiting Divorce</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="maritalError" role="alert"></span>
+          </div>
+
+          <div class="form-group" id="childrenGroup" hidden>
+            <label class="form-label" for="children">
+              <i data-lucide="baby" width="14" height="14"></i>
+              Children
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="children" name="children" class="form-input form-select">
+                <option value="" disabled selected>Select number of children</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4+</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="childrenError" role="alert"></span>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="tongue">
+                <i data-lucide="languages" width="14" height="14"></i>
+                Mother Tongue
+              </label>
+              <div class="input-wrap select-wrap">
+                <select id="tongue" name="tongue" class="form-input form-select" required>
+                  <option value="" disabled selected>Select</option>
+                  <option>Hindi</option>
+                  <option>Punjabi</option>
+                  <option>Pahari / Himachali</option>
+                  <option>Dogri</option>
+                  <option>Gaddi</option>
+                  <option>Kinnauri</option>
+                  <option>English</option>
+                  <option>Other</option>
+                </select>
+                <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+              </div>
+              <span class="form-error" id="tongueError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="religion">
+                <i data-lucide="landmark" width="14" height="14"></i>
+                Religion
+              </label>
+              <div class="input-wrap select-wrap">
+                <select id="religion" name="religion" class="form-input form-select" required>
+                  <option value="" disabled selected>Select</option>
+                  <option>Hindu</option>
+                  <option>Sikh</option>
+                  <option>Muslim</option>
+                  <option>Christian</option>
+                  <option>Buddhist</option>
+                  <option>Jain</option>
+                  <option>Other</option>
+                </select>
+                <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+              </div>
+              <span class="form-error" id="religionError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cast">
+              <i data-lucide="users" width="14" height="14"></i>
+              Cast
+            </label>
+            <div class="input-wrap select-wrap">
+              <select id="cast" name="cast" class="form-input form-select" required>
+                <option value="" disabled selected>Select cast</option>
+                <option>Rajput</option>
+                <option>Brahmin</option>
+                <option>Thakur</option>
+                <option>Kanet</option>
+                <option>Koli</option>
+                <option>Rathi</option>
+                <option>Saini</option>
+                <option>Khatri</option>
+                <option>Baniya</option>
+                <option>Other</option>
+              </select>
+              <i data-lucide="chevron-down" width="14" height="14" class="select-icon" aria-hidden="true"></i>
+            </div>
+            <span class="form-error" id="castError" role="alert"></span>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label">
+                <i data-lucide="sparkle" width="14" height="14"></i>
+                Manglik
+              </label>
+              <div class="su-pill-grid" id="manglikGrid">
+                <label class="su-pill-option">
+                  <input type="radio" name="manglik" value="Yes" />
+                  <span class="su-pill-inner">Yes</span>
+                </label>
+                <label class="su-pill-option">
+                  <input type="radio" name="manglik" value="No" />
+                  <span class="su-pill-inner">No</span>
+                </label>
+              </div>
+              <span class="form-error" id="manglikError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <i data-lucide="moon-star" width="14" height="14"></i>
+                Horoscope Needed
+              </label>
+              <div class="su-pill-grid" id="horoscopeGrid">
+                <label class="su-pill-option">
+                  <input type="radio" name="horoscope" value="Yes" />
+                  <span class="su-pill-inner">Yes</span>
+                </label>
+                <label class="su-pill-option">
+                  <input type="radio" name="horoscope" value="No" />
+                  <span class="su-pill-inner">No</span>
+                </label>
+              </div>
+              <span class="form-error" id="horoscopeError" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="su-actions">
+            <button type="button" class="btn-su-secondary" data-back>
+              <i data-lucide="arrow-left" width="16" height="16"></i>
+              Back
+            </button>
+            <button type="submit" class="btn-login" id="step3SubmitBtn">
+              <span class="btn-login-text">Finish <i data-lucide="check" width="16" height="16"></i></span>
+              <span class="btn-login-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        <!-- ========================================================
+             PHOTO UPLOAD (no step number — mirrors SignupUploadPic)
+             ======================================================== -->
+        <div class="su-panel su-panel-photo" id="panelPhoto" data-panel="photo">
+          <h2 class="su-panel-title">Add a profile photo</h2>
+          <p class="su-panel-subtitle">Profiles with a clear photo get up to 5&times; more responses. You can always add this later.</p>
+
+          <label class="su-photo-circle" for="photoInput" id="photoCircle">
+            <img id="photoPreview" alt="" hidden />
+            <span class="su-photo-placeholder" id="photoPlaceholder">
+              <i data-lucide="camera" width="28" height="28"></i>
+              Upload Photo
+            </span>
+          </label>
+          <input type="file" id="photoInput" accept="image/*" hidden />
+          <span class="form-error" id="photoError" role="alert"></span>
+
+          <div class="su-actions su-actions-center">
+            <button type="button" class="btn-su-secondary" id="skipPhotoBtn">Skip for now</button>
+            <button type="button" class="btn-login" id="continuePhotoBtn" disabled>
+              <span class="btn-login-text">Continue <i data-lucide="arrow-right" width="16" height="16"></i></span>
+              <span class="btn-login-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             SUCCESS (no step number — mirrors SignupSuccess)
+             ======================================================== -->
+        <div class="su-panel su-panel-success" id="panelSuccess" data-panel="success">
+          <div class="su-success-icon">
+            <i data-lucide="check" width="32" height="32"></i>
+          </div>
+          <h2 class="su-panel-title">Welcome to HimRishtey<span id="successName"></span>!</h2>
+          <p class="su-panel-subtitle">Your profile has been created successfully. Our team will verify your details shortly — you can start exploring matches right away.</p>
+          <a href="index.html" class="btn-login su-success-cta">
+            <span class="btn-login-text">Go to Dashboard <i data-lucide="arrow-right" width="16" height="16"></i></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/signup.js"></script>
+</body>
+</html>
