@@ -10,7 +10,6 @@
         initIcons();
         initHeaderScroll();
         initMobileDrawer();
-        initThemeToggle();
         initSmoothAnchors();
         initRevealOnScroll();
         initStatCounters();
@@ -83,39 +82,7 @@
         });
     }
 
-    /* ---------------------------------------------------------------------
-       Theme toggle (light / dark), persisted in localStorage
-       --------------------------------------------------------------------- */
-    function initThemeToggle() {
-        var btn = document.querySelector('[data-theme-toggle]');
-        var root = document.documentElement;
-        if (!btn) return;
 
-        var STORAGE_KEY = 'himrishtey-theme';
-        var saved = null;
-        try { saved = window.localStorage.getItem(STORAGE_KEY); } catch (e) { /* storage unavailable */ }
-
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var initialTheme = saved || (prefersDark ? 'dark' : 'light');
-        applyTheme(initialTheme);
-
-        btn.addEventListener('click', function () {
-            var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-            var next = current === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            try { window.localStorage.setItem(STORAGE_KEY, next); } catch (e) { /* ignore */ }
-        });
-
-        function applyTheme(theme) {
-            root.setAttribute('data-theme', theme);
-            btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-            var iconEl = btn.querySelector('i');
-            if (iconEl) {
-                iconEl.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
-                initIcons();
-            }
-        }
-    }
 
     /* ---------------------------------------------------------------------
        Smooth-scroll for in-page anchor links (with sticky header offset)
